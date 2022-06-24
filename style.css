@@ -65,6 +65,7 @@ body {
   padding: 12px 20px;
   text-transform: uppercase;
   transition: 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .login .login-content .box-input .btn:hover {
@@ -123,8 +124,49 @@ body {
   padding: 12px 20px;
   text-transform: uppercase;
   transition: 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .find-repository .search-content .btn:hover {
   background-color: #2f8f49;
+}
+
+/* User */
+
+.not-found {
+  align-items: center;
+  background-color: #f0f0f0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.not-found .try-content .title {
+  color: #24292e;
+  font-size: 92px;
+  font-weight: 600;
+  line-height: 110px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.not-found .try-content .btn {
+  background-color: #0a69da;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in-out;
+  margin: 0 auto;
+  display: table;
+  text-decoration: none;
+}
+
+.not-found .try-content .btn:hover {
+  background-color: #250fcb;
 }
