@@ -175,6 +175,7 @@ body {
 .dashboard {
   display: flex;
   gap: 32px;
+  padding: 40px;
 }
 
 .dashboard .box-details {
@@ -182,79 +183,96 @@ body {
 }
 
 .dashboard .photo {
-  width: 296px;
-  height: 296px;
   border-radius: 50%;
   filter: grayscale(1);
+  height: 296px;
   margin-bottom: 20px;
+  width: 296px;
 }
 
 .dashboard .name {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
   color: #24292e;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
   margin-bottom: 20px;
 }
 
 .dashboard .username {
-  font-weight: 400;
   font-size: 20px;
+  font-weight: 400;
   line-height: 24px;
   margin-bottom: 20px;
 }
 
 .dashboard .description {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
   color: #24292e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
   margin-bottom: 40px;
 }
 
 .dashboard .city {
-  width: 52px;
-  height: 19px;
+  color: #57606a;
   font-family: "Radio Canada";
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  height: 19px;
   line-height: 19px;
-  color: #57606a;
   margin-top: 40px;
+  width: 52px;
 }
 
 .dashboard .since {
-  width: 133px;
-  height: 19px;
+  color: #57606a;
   font-family: "Radio Canada";
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  height: 19px;
   line-height: 19px;
-  color: #57606a;
   margin-top: 20px;
+  width: 133px;
 }
 
 .dashboard .box-content {
+  flex: 1;
 }
 
-.busca .textfield {
-  margin: 0 40px;
-  width: 894px;
-  height: 48px;
-  background: rgba(0, 0, 0, 0.19);
+.dashboard .box-content .box-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.dashboard .box-content .textfield {
+  background-color: rgba(0, 0, 0, 0.19);
   border-radius: 8px;
+  color: #ffffff;
+  flex: 1;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 12px 20px;
 }
 
-.busca .btn {
-  width: 118px;
-  height: 48px;
-  background: #41c363;
+.dashboard .box-content .btn {
+  background-color: #41c363;
   border-radius: 8px;
+  color: #e5e5e5;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
 }
 
-.busca .title {
+.dashboard .box-content .title {
   width: 186px;
   height: 38px;
   font-family: "Radio Canada";
@@ -263,4 +281,13 @@ body {
   font-size: 32px;
   line-height: 38px;
   color: #000000;
+  margin-bottom: 20px;
+}
+
+.dashboard .list .list-item {
+  width: 1024px;
+  height: 125px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
