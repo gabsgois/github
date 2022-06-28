@@ -170,3 +170,97 @@ body {
 .not-found .try-content .btn:hover {
   background-color: #250fcb;
 }
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  gap: 32px;
+}
+
+.dashboard .box-details {
+  width: 296px;
+}
+
+.dashboard .photo {
+  width: 296px;
+  height: 296px;
+  border-radius: 50%;
+  filter: grayscale(1);
+  margin-bottom: 20px;
+}
+
+.dashboard .name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #24292e;
+  margin-bottom: 20px;
+}
+
+.dashboard .username {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard .description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #24292e;
+  margin-bottom: 40px;
+}
+
+.dashboard .city {
+  width: 52px;
+  height: 19px;
+  font-family: "Radio Canada";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #57606a;
+  margin-top: 40px;
+}
+
+.dashboard .since {
+  width: 133px;
+  height: 19px;
+  font-family: "Radio Canada";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #57606a;
+  margin-top: 20px;
+}
+
+.dashboard .box-content {
+}
+
+.busca .textfield {
+  margin: 0 40px;
+  width: 894px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+}
+
+.busca .btn {
+  width: 118px;
+  height: 48px;
+  background: #41c363;
+  border-radius: 8px;
+}
+
+.busca .title {
+  width: 186px;
+  height: 38px;
+  font-family: "Radio Canada";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #000000;
+}
