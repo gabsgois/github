@@ -258,6 +258,10 @@ body {
   padding: 12px 20px;
 }
 
+.dashboard .box-content .textfield::placeholder {
+  color: #e5e5e5;
+}
+
 .dashboard .box-content .btn {
   background-color: #41c363;
   border-radius: 8px;
@@ -272,22 +276,38 @@ body {
   text-decoration: none;
 }
 
+.dashboard .box-content .btn:hover {
+  background-color: #2f8f49;
+}
+
 .dashboard .box-content .title {
-  width: 186px;
-  height: 38px;
-  font-family: "Radio Canada";
-  font-style: normal;
+  color: #000000;
   font-weight: 400;
   font-size: 32px;
   line-height: 38px;
-  color: #000000;
   margin-bottom: 20px;
 }
 
+.dashboard .list {
+  list-style: none;
+}
+
 .dashboard .list .list-item {
-  width: 1024px;
-  height: 125px;
   background: #ffffff;
   border-radius: 8px;
-  margin-bottom: 20px;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+  /* margin-top: 20px; */
 }
+
+.dashboard .list .list-item + .list-item {
+  margin-top: 20px;
+}
+
+/* .dashboard .list .list-item:first-of-type {
+  margin-top: 0;
+} */
+
+/* .dashboard .list .list-item:last-of-type {
+  margin-bottom: 0;
+} */
