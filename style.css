@@ -296,8 +296,60 @@ body {
   background: #ffffff;
   border-radius: 8px;
   padding: 20px;
+  font-size: 14px;
+  color: #bebfc1;
   /* margin-bottom: 20px; */
   /* margin-top: 20px; */
+}
+
+.dashboard .list .list-item .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard .list .list-item .flex + .flex {
+  margin-top: 20px;
+}
+
+.dashboard .list .list-item .flex .language {
+  position: relative;
+  padding-left: 24px;
+}
+
+.dashboard .list .list-item .flex .language::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dashboard .list .list-item .paragrafo {
+  color: #000000;
+  font-family: "Radio Canada";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.dashboard .list .list-item .label {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #e5e5e5;
+  cursor: default;
+  width: 57px;
+  height: 22px;
+  font-size: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dashboard .list .list-item + .list-item {

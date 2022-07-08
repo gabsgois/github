@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Math.random()</h2>
+
+    <p>
+      Math.random() returns a random number between 0 (included) and 1
+      (excluded):
+    </p>
+
+    <p id="numA"></p>
+    <p id="numB"></p>
+
+    <input type="number" id="result" placeholder="Resultado" />
+
+    <button onclick="onSubmit()">Submit</button>
+
+    <script>
+      const data = {
+        login: "gabsgois",
+        id: 105524236,
+        node_id: "U_kgDOBkosDA",
+        avatar_url: "https://avatars.githubusercontent.com/u/105524236?v=4",
+        gravatar_id: "",
+        url: "https://api.github.com/users/gabsgois",
+        html_url: "https://github.com/gabsgois",
+        followers_url: "https://api.github.com/users/gabsgois/followers",
+        following_url:
+          "https://api.github.com/users/gabsgois/following{/other_user}",
+        gists_url: "https://api.github.com/users/gabsgois/gists{/gist_id}",
+        starred_url:
+          "https://api.github.com/users/gabsgois/starred{/owner}{/repo}",
+        subscriptions_url:
+          "https://api.github.com/users/gabsgois/subscriptions",
+        organizations_url: "https://api.github.com/users/gabsgois/orgs",
+        repos_url: "https://api.github.com/users/gabsgois/repos",
+        events_url: "https://api.github.com/users/gabsgois/events{/privacy}",
+        received_events_url:
+          "https://api.github.com/users/gabsgois/received_events",
+        type: "User",
+        site_admin: false,
+        name: "Gabriela Gois",
+        company: null,
+        blog: "",
+        location: "Santos",
+        email: null,
+        hireable: null,
+        bio: "Dev front-end",
+        twitter_username: null,
+        public_repos: 2,
+        public_gists: 0,
+        followers: 0,
+        following: 0,
+        created_at: "2022-05-13T22:33:16Z",
+        updated_at: "2022-07-08T19:12:06Z",
+      };
+
+      const numA = data.name;
+      const numB = Math.floor(Math.random() * 100);
+
+      document.querySelector("#numA").innerHTML = numA;
+
+      document.getElementById("numB").innerHTML = numB;
+
+      function onSubmit() {
+        const value = document.querySelector("#result").value;
+        const expetedValue = numA + numB;
+
+        if (value != "")
+          if (expetedValue == value) {
+            alert("seguir");
+            window.location.href = "/repository.html";
+          } else {
+            alert("tente novamente");
+          }
+      }
+    </script>
+  </body>
+</html>

@@ -18,21 +18,14 @@
   <body>
     <div class="dashboard">
       <div class="box-details">
-        <img
-          class="photo"
-          src="https://scontent.fssz2-1.fna.fbcdn.net/v/t31.18172-8/28423303_1744075788946974_7920477626457026317_o.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFk_nDDUtScaDw-3ri6Arkb0fc1bvtdKRvR9zVu-10pGxyiPUTMPnzs_b1drkgnleqE2t4Y9J5Ciia1eym84_2w&_nc_ohc=biQI9U6MIlsAX-jB89R&_nc_ht=scontent.fssz2-1.fna&oh=00_AT8uUHBH9a7cOJ-4Mc3zO_vZyuV9iHzPq4NipCItclYsIA&oe=62DF617F"
-          alt="Gabi"
-        />
-        <h1 class="name">Victor Marques</h1>
-        <h2 class="username">victormarques92</h2>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-          voluptate fugit pariatur illo repudiandae? Culpa, nihil molestias
-          maiores saepe cumque rem, labore, iste delectus dolorem consequatur ad
-          error nam debitis.
-        </p>
-        <p class="city">Santos</p>
-        <p class="since">Since 24/11/2015</p>
+        <img class="photo" id="photo" alt="Gabi" />
+        <h1 class="name" id="name">
+          <!-- Add nome dinamico -->
+        </h1>
+        <h2 class="username" id="login"></h2>
+        <p class="bio" id="bio"></p>
+        <p class="location" id="location"></p>
+        <p class="since">Since <span id="createdAt"></span></p>
       </div>
 
       <div class="box-content">
@@ -47,13 +40,106 @@
 
         <h1 class="title">Repositories</h1>
         <ul class="list">
-          <li class="list-item">api fire</li>
-          <li class="list-item">bexs-front-end-exam</li>
-          <li class="list-item">bootcamp-gostack-desafios</li>
-          <li class="list-item">cloudinfo-merlins</li>
-          <li class="list-item">experience</li>
+          <li class="list-item">
+            <div>
+              <p class="paragrafo">api-fire</p>
+              <span class="label">Public</span>
+            </div>
+            <div>HTML</div>
+            <div>created at 18/07/2016</div>
+          </li>
+
+          <li class="list-item">
+            <div class="flex">
+              <p class="paragrafo">bexs-front-end-exam</p>
+              <span class="label">Public</span>
+            </div>
+            <div class="flex">
+              <p class="language">html</p>
+            </div>
+            <div class="flex">
+              <p>created at 18/07/2016</p>
+              <p>updated at 18/07/2016</p>
+            </div>
+          </li>
+
+          <li class="list-item">
+            <div>
+              <p class="paragrafo">bootcamp-gostack-desafios</p>
+              <span class="label">Public</span>
+            </div>
+            <div>HTML</div>
+            <div>created at 18/07/2016</div>
+          </li>
+
+          <li class="list-item">
+            <div>
+              <p class="paragrafo">cloudinfo-merlins</p>
+              <span class="label">Public</span>
+            </div>
+            <div>HTML</div>
+            <div>created at 18/07/2016</div>
+          </li>
+
+          <li class="list-item">
+            <div>
+              <p class="paragrafo">experience</p>
+              <span class="label">Public</span>
+            </div>
+            <div>HTML</div>
+            <div>created at 18/07/2016</div>
+          </li>
         </ul>
       </div>
     </div>
+
+    <script>
+      const data = {
+        login: "gabsgois",
+        id: 105524236,
+        node_id: "U_kgDOBkosDA",
+        avatar_url: "https://avatars.githubusercontent.com/u/105524236?v=4",
+        gravatar_id: "",
+        url: "https://api.github.com/users/gabsgois",
+        html_url: "https://github.com/gabsgois",
+        followers_url: "https://api.github.com/users/gabsgois/followers",
+        following_url:
+          "https://api.github.com/users/gabsgois/following{/other_user}",
+        gists_url: "https://api.github.com/users/gabsgois/gists{/gist_id}",
+        starred_url:
+          "https://api.github.com/users/gabsgois/starred{/owner}{/repo}",
+        subscriptions_url:
+          "https://api.github.com/users/gabsgois/subscriptions",
+        organizations_url: "https://api.github.com/users/gabsgois/orgs",
+        repos_url: "https://api.github.com/users/gabsgois/repos",
+        events_url: "https://api.github.com/users/gabsgois/events{/privacy}",
+        received_events_url:
+          "https://api.github.com/users/gabsgois/received_events",
+        type: "User",
+        site_admin: false,
+        name: "Gabriela Gois",
+        company: null,
+        blog: "",
+        location: "Santos",
+        email: null,
+        hireable: null,
+        bio: "Dev front-end",
+        twitter_username: null,
+        public_repos: 2,
+        public_gists: 0,
+        followers: 0,
+        following: 0,
+        created_at: "2022-05-13T22:33:16Z",
+        updated_at: "2022-07-08T19:12:06Z",
+      };
+
+      document.querySelector("#photo").setAttribute("src", data.avatar_url);
+      document.querySelector("#name").innerHTML = data.name;
+      document.querySelector("#login").innerHTML = data.login;
+      document.querySelector("#location").innerHTML = data.location;
+      document.querySelector("#createdAt").innerHTML = new Date(
+        data.created_at
+      ).toLocaleDateString("pt-BR");
+    </script>
   </body>
 </html>

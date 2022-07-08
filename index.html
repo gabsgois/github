@@ -19,14 +19,41 @@
       <div class="login-content">
         <h1 class="title">Login</h1>
 
-        <p class="text">How much is 5 + 7?</p>
+        <p class="text">
+          How much is <span id="numA"></span> + <span id="numB"></span>?
+        </p>
 
         <div class="box-input">
-          <input type="number" placeholder="Resultado" class="textfield" />
+          <input
+            type="number"
+            placeholder="Resultado"
+            id="result"
+            class="textfield"
+          />
 
-          <a class="btn" href="./repository.html">entrar</a>
+          <button class="btn" onclick="onSubmit()">entrar</button>
         </div>
       </div>
     </div>
+
+    <script>
+      const numA = Math.floor(Math.random() * 10);
+      const numB = Math.floor(Math.random() * 10);
+
+      document.querySelector("#numA").innerHTML = numA;
+
+      document.getElementById("numB").innerHTML = numB;
+
+      function onSubmit() {
+        const value = document.querySelector("#result").value;
+        const expetedValue = numA + numB;
+
+        if (expetedValue == value) {
+          window.location.href = "/repository.html";
+        } else {
+          alert("tente novamente");
+        }
+      }
+    </script>
   </body>
 </html>

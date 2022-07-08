@@ -24,11 +24,24 @@
             type="text"
             placeholder="Ex: victormarques92"
             class="textfield"
+            id="result"
           />
 
-          <a class="btn" href="./not-found.html">search</a>
+          <button class="btn" onclick="onSubmit()">search</button>
         </div>
       </div>
     </div>
+
+    <script>
+      function onSubmit() {
+        const value = document.querySelector("#result").value;
+
+        if (value != "") {
+          window.location.href = "/dashboard.html";
+        } else {
+          alert("insira o repositório");
+        }
+      }
+    </script>
   </body>
 </html>
