@@ -1,0 +1,371 @@
+// ==============================================
+//                                      VARIABLES
+// ==============================================
+$font-family: "Radio Canada", sans-serif;
+$background-light: #e5e5e5;
+$background-dark: #24292e;
+$white: #ffffff;
+$silver: #bebfc1;
+$success: #41c363;
+$success-hover: #2f8f49;
+$textfield-background: rgba(0, 0, 0, 0.19);
+$gallery: #f0f0f0;
+$info: #0a69da;
+$info-hover: #250fcb;
+$gray: #57606a;
+$black: #000000;
+$sand: #bebfc1;
+$pink: pink;
+
+@mixin font32() {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+// ==============================================
+//                                          RESET
+// ==============================================
+* {
+  border: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $background-light;
+}
+
+// ==============================================
+//                                          LOGIN
+// ==============================================
+.login {
+  align-items: center;
+  background-color: $background-dark;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
+  .login-content {
+    .title {
+      color: $white;
+      font-size: 92px;
+      font-weight: 600;
+      line-height: 110px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .text {
+      @include font32;
+      color: $silver;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .box-input {
+      display: flex;
+      gap: 12px;
+
+      .textfield {
+        background-color: $textfield-background;
+        border-radius: 8px;
+        color: $white;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 12px 20px;
+        width: 470px;
+      }
+
+      .btn {
+        background-color: $success;
+        border-radius: 8px;
+        color: $silver;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 12px 20px;
+        text-transform: uppercase;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $success-hover;
+        }
+      }
+    }
+  }
+}
+
+// ==============================================
+//                                     REPOSITORY
+// ==============================================
+.find-repository {
+  align-items: center;
+  background-color: $background-dark;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
+  .search-content {
+    max-width: 1296px;
+    width: 100%;
+
+    .title {
+      color: $white;
+      font-size: 92px;
+      font-weight: 600;
+      line-height: 110px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .box-input {
+      display: flex;
+      gap: 12px;
+
+      .textfield {
+        background-color: $textfield-background;
+        border-radius: 8px;
+        color: $white;
+        flex: 1;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 12px 20px;
+      }
+
+      .btn {
+        background-color: $success;
+        border-radius: 8px;
+        color: $background-light;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 12px 20px;
+        text-transform: uppercase;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $success-hover;
+        }
+      }
+    }
+  }
+}
+
+// ==============================================
+//                                      NOT FOUND
+// ==============================================
+.not-found {
+  align-items: center;
+  background-color: $gallery;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
+  .try-content {
+    .title {
+      color: $background-dark;
+      font-size: 92px;
+      font-weight: 600;
+      line-height: 110px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .btn {
+      background-color: $info;
+      border-radius: 8px;
+      color: $white;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      padding: 12px 20px;
+      text-transform: uppercase;
+      transition: 0.2s ease-in-out;
+      margin: 0 auto;
+      display: table;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $info-hover;
+      }
+    }
+  }
+}
+
+// ==============================================
+//                                      DASHBOARD
+// ==============================================
+.dashboard {
+  display: flex;
+  gap: 32px;
+  padding: 40px;
+
+  .box-details {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    width: 296px;
+
+    .photo {
+      border-radius: 50%;
+      filter: grayscale(1);
+      height: 296px;
+      margin-bottom: 20px;
+      width: 296px;
+    }
+
+    .name {
+      color: $background-dark;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+      margin-bottom: 20px;
+    }
+
+    .username {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+
+    .bio {
+      color: $background-dark;
+    }
+
+    & > p {
+      & + p {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .box-content {
+    flex: 1;
+
+    .box-input {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 40px;
+
+      .textfield {
+        background-color: $textfield-background;
+        border-radius: 8px;
+        color: $white;
+        flex: 1;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 12px 20px;
+
+        &::placeholder {
+          color: $background-light;
+        }
+      }
+
+      .btn {
+        background-color: $success;
+        border-radius: 8px;
+        color: $background-light;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 12px 20px;
+        text-transform: uppercase;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $success-hover;
+        }
+      }
+    }
+
+    .title {
+      @include font32;
+      color: $black;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .list {
+      list-style: none;
+
+      &-item {
+        background: $white;
+        border-radius: 8px;
+        padding: 20px;
+        font-size: 12px;
+        color: $sand;
+        /* margin-bottom: 20px; */
+        /* margin-top: 20px; */
+
+        & + .list-item {
+          margin-top: 20px;
+        }
+
+        .flex {
+          display: flex;
+          justify-content: space-between;
+
+          & + .flex {
+            margin-top: 20px;
+          }
+
+          .language {
+            position: relative;
+            padding-left: 24px;
+
+            &::before {
+              content: "";
+              width: 16px;
+              height: 16px;
+              background-color: $pink;
+              display: block;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+
+        .paragrafo {
+          color: $black;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        .label {
+          background-color: $white;
+          border-radius: 8px;
+          color: $background-light;
+          cursor: default;
+          width: 57px;
+          height: 22px;
+          font-size: 12px;
+          border: 1px solid $gallery;
+          border-radius: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
