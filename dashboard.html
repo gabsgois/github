@@ -39,127 +39,71 @@
         </div>
 
         <h1 class="title">Repositories</h1>
-        <ul class="list">
-          <li class="list-item">
-            <div class="flex">
-              <p class="paragrafo">api-fire</p>
-              <span class="label">Public</span>
-            </div>
-            <div class="flex">
-              <p class="language">HTML</p>
-            </div>
-            <div class="flex">
-              <p>created at 18/07/2016</p>
-              <p>updated at 20/07/2016</p>
-            </div>
-          </li>
-
-          <li class="list-item">
-            <div class="flex">
-              <p class="paragrafo">bexs-front-end-exam</p>
-              <span class="label">Public</span>
-            </div>
-            <div class="flex">
-              <p class="language">HTML</p>
-            </div>
-            <div class="flex">
-              <p>created at 18/07/2016</p>
-              <p>updated at 20/07/2016</p>
-            </div>
-          </li>
-
-          <li class="list-item">
-            <div class="flex">
-              <p class="paragrafo">bootcamp-gostack-desafios</p>
-              <span class="label">Public</span>
-            </div>
-            <div class="flex">
-              <p class="language">HTML</p>
-            </div>
-            <div class="flex">
-              <p>created at 18/07/2016</p>
-              <p>updated at 20/07/2016</p>
-            </div>
-          </li>
-
-          <li class="list-item">
-            <div class="flex">
-              <p class="paragrafo">cloudinfo-merlins</p>
-              <span class="label">Public</span>
-            </div>
-            <div class="flex">
-              <p class="language">HTML</p>
-            </div>
-            <div class="flex">
-              <p>created at 18/07/2016</p>
-              <p>updated at 20/07/2016</p>
-            </div>
-          </li>
-
-          <li class="list-item">
-            <div class="flex">
-              <p class="paragrafo">experience</p>
-              <span class="label">Public</span>
-            </div>
-            <div class="flex">
-              <p class="language">HTML</p>
-            </div>
-            <div class="flex">
-              <p>created at 18/07/2016</p>
-              <p>updated at 20/07/2016</p>
-            </div>
-          </li>
+        <ul class="list" id="list">
+          <!-- Conteúdo dinamico -->
         </ul>
       </div>
     </div>
 
     <script>
-      const data = {
-        login: "gabsgois",
-        id: 105524236,
-        node_id: "U_kgDOBkosDA",
-        avatar_url: "https://avatars.githubusercontent.com/u/105524236?v=4",
-        gravatar_id: "",
-        url: "https://api.github.com/users/gabsgois",
-        html_url: "https://github.com/gabsgois",
-        followers_url: "https://api.github.com/users/gabsgois/followers",
-        following_url:
-          "https://api.github.com/users/gabsgois/following{/other_user}",
-        gists_url: "https://api.github.com/users/gabsgois/gists{/gist_id}",
-        starred_url:
-          "https://api.github.com/users/gabsgois/starred{/owner}{/repo}",
-        subscriptions_url:
-          "https://api.github.com/users/gabsgois/subscriptions",
-        organizations_url: "https://api.github.com/users/gabsgois/orgs",
-        repos_url: "https://api.github.com/users/gabsgois/repos",
-        events_url: "https://api.github.com/users/gabsgois/events{/privacy}",
-        received_events_url:
-          "https://api.github.com/users/gabsgois/received_events",
-        type: "User",
-        site_admin: false,
-        name: "Gabriela Gois",
-        company: null,
-        blog: "",
-        location: "Santos",
-        email: null,
-        hireable: null,
-        bio: "Dev front-end",
-        twitter_username: null,
-        public_repos: 2,
-        public_gists: 0,
-        followers: 0,
-        following: 0,
-        created_at: "2022-05-13T22:33:16Z",
-        updated_at: "2022-07-08T19:12:06Z",
-      };
+      const user = localStorage.getItem("user");
+      const url = `https://api.github.com/users/${user}`;
+      const urlSubscriptions = `https://api.github.com/users/${user}/subscriptions`;
 
-      document.querySelector("#photo").setAttribute("src", data.avatar_url);
-      document.querySelector("#name").innerHTML = data.name;
-      document.querySelector("#login").innerHTML = data.login;
-      document.querySelector("#location").innerHTML = data.location;
-      document.querySelector("#createdAt").innerHTML = new Date(
-        data.created_at
-      ).toLocaleDateString("pt-BR");
+      let data;
+
+      fetch(url)
+        .then((resp) => resp.json())
+        .then(function (response) {
+          console.log("response", response);
+          data = response;
+        });
+
+      setTimeout(() => {
+        console.log(data);
+        document.querySelector("#photo").setAttribute("src", data.avatar_url);
+        document.querySelector("#name").innerHTML = data.name;
+        document.querySelector("#login").innerHTML = data.login;
+        document.querySelector("#location").innerHTML = data.location;
+        document.querySelector("#createdAt").innerHTML = new Date(
+          data.created_at
+        ).toLocaleDateString("pt-BR");
+      }, 100);
+
+      let subscriptions;
+
+      fetch(urlSubscriptions)
+        .then((resp) => resp.json())
+        .then(function (response) {
+          subscriptions = response;
+        });
+
+      setTimeout(() => {
+        const render = subscriptions.map(function (item) {
+          return `<li class="list-item">
+              <div class="flex">
+                <p class="paragrafo">${item.name}</p>
+                <span class="label">${item.visibility}</span>
+              </div>
+
+              <div class="flex">
+                <p class="language">${item.language}</p>
+              </div>
+
+              <div class="flex">
+                <p>created at ${new Date(item.created_at).toLocaleDateString(
+                  "pt-BR"
+                )}</p>
+
+                <p>updated at ${new Date(item.updated_at).toLocaleDateString(
+                  "pt-BR"
+                )}</p>
+              </div>
+            </li>`;
+        });
+
+        document.querySelector("#list").innerHTML = render.join("");
+      }, 1000);
     </script>
   </body>
 </html>

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./styles/styles.css" />
 
     <title>Github</title>
+
+    <script src="./scripts.js" defer></script>
   </head>
 
   <body>
@@ -36,8 +38,19 @@
       function onSubmit() {
         const value = document.querySelector("#result").value;
 
+        const url = "https://api.github.com/users/" + value;
+
         if (value != "") {
-          window.location.href = "/dashboard.html";
+          fetch(url)
+            .then((resp) => resp.json())
+            .then(function (data) {
+              if (data.message === "Not Found") {
+                return alert("Repositório não encontrado.");
+              }
+
+              localStorage.setItem("user", value);
+              window.location.href = "/dashboard.html";
+            });
         } else {
           alert("insira o repositório");
         }
